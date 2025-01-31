@@ -8,7 +8,7 @@ const BudgetForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/budgets", { category, limit });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/budgets`, { category, limit });
       alert("Budget created successfully!");
     } catch (err) {
       alert("Error creating budget");

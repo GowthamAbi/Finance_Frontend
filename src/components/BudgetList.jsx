@@ -7,7 +7,7 @@ const BudgetList = () => {
   useEffect(() => {
     const fetchBudgets = async () => {
       try {
-        const response = await axios.get("/api/budgets");
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/budgets`);
         setBudgets(response.data);
       } catch (err) {
         console.error("Error fetching budgets:", err);

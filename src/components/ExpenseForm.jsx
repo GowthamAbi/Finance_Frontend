@@ -9,7 +9,7 @@ const ExpenseForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/expenses", {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/expenses`, {
         amount,
         category,
         description,

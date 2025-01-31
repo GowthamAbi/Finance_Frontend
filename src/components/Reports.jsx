@@ -12,7 +12,7 @@ const Reports = () => {
   };
 
   const downloadCsv = async () => {
-    const response = await fetch("/api/reports/csv");
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/reports/csv`);
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");

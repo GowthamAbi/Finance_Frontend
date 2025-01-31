@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("/api/auth/logout");
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/logout`);
       localStorage.removeItem("token");
       navigate("/login");
     } catch (err) {

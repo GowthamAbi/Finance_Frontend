@@ -9,7 +9,7 @@ const GoalForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/goals", { name, targetAmount, deadline });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/goals`, { name, targetAmount, deadline });
       alert("Goal created successfully!");
     } catch (err) {
       alert("Error creating goal");

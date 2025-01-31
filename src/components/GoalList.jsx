@@ -7,7 +7,7 @@ const GoalList = () => {
   useEffect(() => {
     const fetchGoals = async () => {
       try {
-        const response = await axios.get("/api/goals");
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/goals`);
         setGoals(response.data);
       } catch (err) {
         console.error("Error fetching goals:", err);

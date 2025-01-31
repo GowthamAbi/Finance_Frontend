@@ -12,7 +12,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/register", { name, email, password ,phone});
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, { name, email, password,phone });
+  
       localStorage.setItem("token", response.data.token);
       navigate("/dashboard");
     } catch (err) {
@@ -46,7 +47,7 @@ const Register = () => {
           className="w-full p-2 border rounded mb-4"
         />
         <input
-          type="Number"
+          type="Phone"
           placeholder="Phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}

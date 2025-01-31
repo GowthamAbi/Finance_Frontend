@@ -14,8 +14,10 @@ const ExpenseForm = () => {
         category,
         description,
       });
+      
       alert("Expense added successfully!");
     } catch (err) {
+      console.log(err)
       alert("Error adding expense");
     }
   };

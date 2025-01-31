@@ -13,10 +13,11 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, { name, email, password,phone });
-  
+  console.log(`${process.env.REACT_APP_API_URL}`)
       localStorage.setItem("token", response.data.token);
       navigate("/dashboard");
     } catch (err) {
+      console.log(err)
       alert("Registration failed");
     }
   };
